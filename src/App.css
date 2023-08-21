@@ -1,0 +1,6 @@
+.instagram_background_gradient {
+    background: #f09433;
+    background: -moz-linear-gradient(45deg, #ffff00 0%, #e6913c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #ffff00 0%, #e6943c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: linear-gradient(45deg, #ffff00 0%, #e6943c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
