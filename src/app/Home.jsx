@@ -13,9 +13,6 @@ export default function Home() {
         </div>
         <div className="flex justify-between w-full">
           <Outlet />
-          {/*           
-          <Story />
-          <Peoples /> */}
         </div>
       </div>
     </div>
