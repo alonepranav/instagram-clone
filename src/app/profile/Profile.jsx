@@ -1,8 +1,10 @@
 import React from "react";
 import { RiSettings5Line } from "react-icons/ri";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 
 export default function Profile() {
+  const location = useLocation();
+  console.log(location.pathname === "/profile/");
   return (
     <div className="h-screen w-full mx-44">
       <div className="flex gap-24 justify-center items-center h-36 pt-24 pr-24">
@@ -56,24 +58,41 @@ export default function Profile() {
       <br />
       <br />
       <br />
-      <div className="border-t border-slate-300">
+      <div className="border-t border-slate-300 mx-14">
         <div className="relative flex justify-center items-center gap-20">
-          <div className="absolute top-0 left-[18.7rem] border-t w-16 border-black"></div>
+          {/* <div
+            className={`absolute top-0 left-[${
+              location.pathname === "/profile/" ? "10.7rem" : ""
+              // : location.pathname === "/profile/post"
+              // ? "26.7rem"
+              // : location.pathname === "/profile/tagged"
+              // ? "34.7rem"
+              // : ""
+            }] border-t w-16 border-black`}
+
+            // className={`absolute top-0 left-[18.9rem] border-t w-16 border-black`}
+          ></div> */}
+
           <Link to={"/profile/"} className="mt-4 text-sm">
             Posts
           </Link>
           {/* 18.7 */}
+
           <Link to={"/profile/reels"} className="mt-4 text-sm">
             Reels
           </Link>
           {/* 26.7 */}
+
           <Link to={"/profile/tagged"} className="mt-4 text-sm">
             Tagged
           </Link>
           {/* 34.7 */}
         </div>
       </div>
-      <Outlet />
+
+      <div className="mx-12">
+        <Outlet />
+      </div>
     </div>
   );
 }

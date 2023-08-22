@@ -9,7 +9,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross1 } from "react-icons/rx";
 import { GrClose } from "react-icons/gr";
 import { AiOutlineClose } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { createPortal } from "react-dom";
 import { BsInstagram } from "react-icons/bs";
 import Search from "./Search";
@@ -34,6 +34,12 @@ export default function Sidebar() {
     }
   }, [create]);
 
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/message") setSmall(true);
+  }, []);
+
   useEffect(() => {
     window.onkeydown = (e) => {
       if (e.key === "Escape") {
@@ -43,7 +49,11 @@ export default function Sidebar() {
   }, [more]);
 
   return (
-    <aside className="h-screen w-36 md:w-[15.5rem] overflow-hidden">
+    <aside
+      className={`h-screen ${small ? "w-8" : "w-36"} bg-yellow-400 w-[${
+        small ? "1.5rem" : "15.5rem"
+      }]`}
+    >
       {/* For create box */}
       {create
         ? createPortal(
@@ -86,11 +96,11 @@ export default function Sidebar() {
           )
         : ""}
       <div
-        className={`fixed h-full w-36 md:w-[${
-          small ? "4.5rem" : "15.5rem"
-        }] border-r-2 border-slate-200 py-5`}
+        className={`fixed h-full md:w-[${
+          small ? "1.5rem" : "15.5rem"
+        }] border-r-2 border-slate-200 py-5 bg-white`}
       >
-        <div className="flex flex-col h-full w-full justify-between">
+        <div className="flex flex-col h-full w-full justify-between bg-white">
           {/* For search bar */}
           {!search || <Search />}
 
@@ -111,55 +121,67 @@ export default function Sidebar() {
               </a>
             </div>
 
-            <ul className="mt-9">
+            <ul className="mt-9 bg-white">
               <Link
                 to="/"
                 className="cursor-pointer flex gap-3 justify-start
-          items-center my-3.5 hover:bg-gray-100 py-2.5 pl-4 mx-2 rounded-md"
+          items-center my-3.5 hover:bg-gray-100 py-2.5 px-4 mx-2 rounded-md"
+                onClick={() => {
+                  setSearch(false);
+                  setSmall(false);
+                }}
               >
                 <GoHomeFill className="text-2xl" />
-                <p className={`${small ? "hidden" : "block"}`}>Home</p>
+                <p className={`${small ? "hidden" : ""}`}>Home</p>
               </Link>
               <li
-                className="relative cursor-pointer flex gap-3 justify-start
-          items-center my-3.5 hover:bg-gray-100  py-2.5 pl-4 mx-2  rounded-md"
+                className="cursor-pointer flex gap-3 justify-start
+          items-center my-3.5 hover:bg-gray-100 py-2.5 pl-4 mx-2 rounded-md"
                 onClick={() => {
-                  setSearch(!search);
-                  setSmall(!small);
+                  setSearch(search ? false : true);
+                  setSmall(search ? false : true);
                 }}
               >
                 <BiSearch className="text-2xl" />
-                <p className={`${small ? "hidden" : "block"}`}>Search</p>
+                <p className={`${small ? "hidden" : ""}`}>Search</p>
               </li>
               <li
                 className="cursor-pointer flex gap-3 justify-start
           items-center my-3.5 hover:bg-gray-100  py-2.5 pl-4 mx-2  rounded-md"
               >
                 <MdOutlineExplore className="text-2xl" />
-                <p className={`${small ? "hidden" : "block"}`}>Explore</p>
+                <p className={`${small ? "hidden" : ""}`}>Explore</p>
               </li>
               <Link
                 to={"/reels"}
                 className="cursor-pointer flex gap-3 justify-start
-         items-center my-3.5 hover:bg-gray-100  py-2.5 pl-4 mx-2  rounded-md"
+                items-center my-3.5 hover:bg-gray-100  py-2.5 pl-4 mx-2  rounded-md"
+                onClick={() => {
+                  setSearch(false);
+                  setSmall(false);
+                }}
               >
                 <BiMoviePlay className="text-2xl" />
-                <p className={`${small ? "hidden" : "block"}`}>Reels</p>
+                <p className={`${small ? "hidden" : ""}`}>Reels</p>
+              </Link>
+              <Link
+                to={"/message"}
+                className="cursor-pointer flex gap-3 justify-start
+              items-center my-3.5 hover:bg-gray-100  py-2.5 pl-4 mx-2  rounded-md"
+                onClick={() => {
+                  setSmall(true);
+                  setSearch(false);
+                }}
+              >
+                <RiMessengerLine className="text-2xl" />
+                <p className={`${small ? "hidden" : ""}`}>Messages</p>
               </Link>
               <li
                 className="cursor-pointer flex gap-3 justify-start
-              items-center my-3.5 hover:bg-gray-100  py-2.5 pl-4 mx-2  rounded-md"
-                onClick={() => setSmall(!small)}
-              >
-                <RiMessengerLine className="text-2xl" />
-                <p className={`${small ? "hidden" : "block"}`}>Messages</p>
-              </li>
-              <li
-                className="cursor-pointer flex gap-3 justify-start
-              items-center my-3.5 hover:bg-gray-100  py-2.5 pl-4 mx-2 rounded-md"
+                items-center my-3.5 hover:bg-gray-100  py-2.5 pl-4 mx-2 rounded-md"
               >
                 <FiHeart className="text-2xl" />
-                <p className={`${small ? "hidden" : "block"}`}>Notification</p>
+                <p className={`${small ? "hidden" : ""}`}>Notification</p>
               </li>
               <li
                 className="cursor-pointer flex gap-3 justify-start
@@ -167,27 +189,31 @@ export default function Sidebar() {
                 onClick={() => setCreate(true)}
               >
                 <TbSquareRoundedPlus className="text-2xl" />
-                <p className={`${small ? "hidden" : "block"}`}>Create</p>
+                <p className={`${small ? "hidden" : ""}`}>Create</p>
               </li>
               <Link
                 to="profile"
                 className="cursor-pointer flex gap-3 justify-start
               items-center my-3.5 hover:bg-gray-100 py-2.5 pl-5 rounded-md"
+                onClick={() => {
+                  setSmall(false);
+                  setSearch(false);
+                }}
               >
                 <img
                   src="/assets/profile.png"
                   className="h-7 rounded-full"
                   alt=""
                 />
-                <p className={`${small ? "hidden" : "block"}`}>Profile</p>
+                <p className={`${small ? "hidden" : ""}`}>Profile</p>
               </Link>
             </ul>
           </div>
 
-          <div className="w-full ml-4 relative">
+          <div className="w-full relative">
             {!more || (
               <div
-                className="w-[16rem] bg-gray-100 rounded-2xl absolute bottom-20"
+                className="w-[16rem] ml-2 bg-gray-100 rounded-2xl absolute bottom-20"
                 style={{
                   boxShadow: "0px 0px 20px #dcdcd4",
                 }}
@@ -200,23 +226,23 @@ export default function Sidebar() {
                     </li>
                     <li className="transition-colors flex gap-3  hover:bg-gray-100 py-3 pl-4 rounded-lg">
                       <FiHeart className="text-2xl" />
-                      <p>Setting</p>
+                      <p>Your Activity</p>
                     </li>
                     <li className="transition-colors flex gap-3  hover:bg-gray-100 py-3 pl-4 rounded-lg">
                       <FiHeart className="text-2xl" />
-                      <p>Setting</p>
+                      <p>Saved</p>
                     </li>
                     <li className="transition-colors flex gap-3  hover:bg-gray-100 py-3 pl-4 rounded-lg">
                       <FiHeart className="text-2xl" />
-                      <p>Setting</p>
+                      <p>Keyboard shortcut</p>
                     </li>
                     <li className="transition-colors flex gap-3  hover:bg-gray-100 py-3 pl-4 rounded-lg">
                       <FiHeart className="text-2xl" />
-                      <p>Setting</p>
+                      <p>Switch appearence</p>
                     </li>
                     <li className="transition-colors flex gap-3  hover:bg-gray-100 py-3 pl-4 rounded-lg">
                       <FiHeart className="text-2xl" />
-                      <p>Setting</p>
+                      <p>Report a problem</p>
                     </li>
                   </ul>
                 </div>
@@ -227,7 +253,7 @@ export default function Sidebar() {
                 </div>
               </div>
             )}
-            <div className="pr-10 mt-20">
+            <div className="pl-2 mr-4 mt-20">
               <div
                 className="flex justify-start gap-3 w-full
               items-center my-6 mx-1 pl-2 py-2.5 rounded-md hover:bg-stone-200"

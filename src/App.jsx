@@ -10,6 +10,7 @@ import Posts from "./app/profile/Posts";
 import Reels from "./app/profile/Reels";
 import Tagged from "./app/profile/Tagged";
 import ReelsSection from "./components/ReelsSection";
+import Message from "./components/Message";
 
 function App() {
   const [logo, setLogo] = useState(true);
@@ -19,7 +20,6 @@ function App() {
       setLogo(false);
     }, 1000);
   }, []);
-
 
   return (
     <>
@@ -48,6 +48,7 @@ function App() {
             <Route path="/" element={<Home />}>
               <Route path="/" element={<HomeSection />} />
               <Route path="/reels" element={<ReelsSection />} />
+              <Route path="/message" element={<Message />} />
               <Route path="profile" element={<Profile />}>
                 <Route index element={<Posts />} />
                 <Route path="reels" element={<Reels />} />

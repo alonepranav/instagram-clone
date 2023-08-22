@@ -20,7 +20,7 @@ export default function Story() {
 
   return (
     <div className="inline py-12 w-full">
-      <div className="flex justify-center gap-3 flex-wrap w-full mt-12">
+      <div className="flex justify-center gap-3 flex-wrap w-full mt-12 ml-8">
         {story.map((r) => {
           return <Box key={r.id} {...r} />;
         })}

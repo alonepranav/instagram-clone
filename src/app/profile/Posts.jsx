@@ -31,7 +31,7 @@ export default function Posts() {
 
   return (
     <>
-      <div className="w-full h-fit mt-4">
+      <div className="w-full h-fit mt-4 mx-auto">
         <div className="flex justify-start items-center flex-wrap gap-1">
           <Box />
           <Box />

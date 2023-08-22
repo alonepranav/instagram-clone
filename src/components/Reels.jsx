@@ -67,7 +67,7 @@ export default function Reels() {
             <span className="mt-2 block">View all comments</span>
           </p>
 
-          <div className="relative">
+          <div className="relative -z-10">
             <AiOutlineSmile className="absolute right-0 top-5 text-stone-400" />
             <input
               type="text"

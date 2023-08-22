@@ -11,7 +11,7 @@ export default function Home() {
         <div>
           <Sidebar />
         </div>
-        <div className="flex justify-between w-full">
+        <div className="flex justify-center w-full">
           <Outlet />
         </div>
       </div>
