@@ -4,10 +4,10 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 
 export default function Profile() {
   const location = useLocation();
-  console.log(location.pathname === "/profile/");
+
   return (
     <div className="h-screen w-full mx-44">
-      <div className="flex gap-24 justify-center items-center h-36 pt-24 pr-24">
+      <div className="flex gap-24 justify-center items-center h-36 pt-14 pr-20">
         <div className="h-36 w-36">
           <img
             src="/assets/profile.png"

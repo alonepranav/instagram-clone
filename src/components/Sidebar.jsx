@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { GoHomeFill } from "react-icons/go";
-import { BiMoviePlay, BiSearch } from "react-icons/bi";
-import { RiMessengerLine } from "react-icons/ri";
+import {
+  BiBookmark,
+  BiCommentError,
+  BiMoviePlay,
+  BiSearch,
+  BiTimer,
+} from "react-icons/bi";
+import { RiMessengerLine, RiSettings5Line } from "react-icons/ri";
 import { MdOutlineExplore } from "react-icons/md";
-import { FiHeart } from "react-icons/fi";
+import { FiHeart, FiSun } from "react-icons/fi";
 import { TbSquareRoundedPlus } from "react-icons/tb";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross1 } from "react-icons/rx";
 import { GrClose } from "react-icons/gr";
-import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineMacCommand } from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
 import { createPortal } from "react-dom";
 import { BsInstagram } from "react-icons/bs";
@@ -50,9 +56,9 @@ export default function Sidebar() {
 
   return (
     <aside
-      className={`h-screen ${small ? "w-8" : "w-36"} bg-yellow-400 w-[${
-        small ? "1.5rem" : "15.5rem"
-      }]`}
+      className={`h-screen ${
+        small ? "w-8" : "w-60"
+      } overflow-hidden bg-yellow-400`}
     >
       {/* For create box */}
       {create
@@ -96,11 +102,11 @@ export default function Sidebar() {
           )
         : ""}
       <div
-        className={`fixed h-full md:w-[${
-          small ? "1.5rem" : "15.5rem"
-        }] border-r-2 border-slate-200 py-5 bg-white`}
+        className={`fixed h-full ${
+          small ? "w-20" : "md:w-60"
+        }   border-r-2 border-slate-200 py-5 bg-white`}
       >
-        <div className="flex flex-col h-full w-full justify-between bg-white">
+        <div className="flex flex-col h-full justify-between bg-white">
           {/* For search bar */}
           {!search || <Search />}
 
@@ -194,7 +200,7 @@ export default function Sidebar() {
               <Link
                 to="profile"
                 className="cursor-pointer flex gap-3 justify-start
-              items-center my-3.5 hover:bg-gray-100 py-2.5 pl-5 rounded-md"
+              items-center my-3.5 hover:bg-gray-100 py-2.5 pl-5 mx-2 rounded-md"
                 onClick={() => {
                   setSmall(false);
                   setSearch(false);
@@ -221,38 +227,42 @@ export default function Sidebar() {
                 <div className="rounded-t-2xl bg-white px-3 py-3">
                   <ul>
                     <li className="transition-colors flex gap-3  hover:bg-gray-100 py-3 pl-4 rounded-lg">
-                      <FiHeart className="text-2xl" />
+                      <RiSettings5Line className="text-2xl" />
                       <p>Setting</p>
                     </li>
                     <li className="transition-colors flex gap-3  hover:bg-gray-100 py-3 pl-4 rounded-lg">
-                      <FiHeart className="text-2xl" />
+                      <BiTimer className="text-2xl" />
                       <p>Your Activity</p>
                     </li>
                     <li className="transition-colors flex gap-3  hover:bg-gray-100 py-3 pl-4 rounded-lg">
-                      <FiHeart className="text-2xl" />
+                      <BiBookmark className="text-2xl" />
                       <p>Saved</p>
                     </li>
                     <li className="transition-colors flex gap-3  hover:bg-gray-100 py-3 pl-4 rounded-lg">
-                      <FiHeart className="text-2xl" />
+                      <AiOutlineMacCommand className="text-2xl" />
                       <p>Keyboard shortcut</p>
                     </li>
                     <li className="transition-colors flex gap-3  hover:bg-gray-100 py-3 pl-4 rounded-lg">
-                      <FiHeart className="text-2xl" />
+                      <FiSun className="text-2xl" />
                       <p>Switch appearence</p>
                     </li>
                     <li className="transition-colors flex gap-3  hover:bg-gray-100 py-3 pl-4 rounded-lg">
-                      <FiHeart className="text-2xl" />
+                      <BiCommentError className="text-2xl" />
                       <p>Report a problem</p>
                     </li>
                   </ul>
                 </div>
-                <div className="rounded-b-2xl bg-white mt-1 text-sm">
-                  <p className="ml-7 py-6">Switch accounts</p>
+                <div className="rounded-b-2xl bg-white mt-1 py-1 text-sm">
+                  <p className="mx-3 px-4 py-4 my-1 mb-2 rounded-lg hover:bg-gray-100">
+                    <Link>Switch accounts</Link>
+                  </p>
                   <hr />
-                  <p className="ml-7 py-6">Log out</p>
+                  <p className="mx-3 px-4 py-4 mt-2 mb-1 rounded-lg hover:bg-gray-100">
+                    Log out
+                  </p>
                 </div>
               </div>
-            )}
+            )}{" "}
             <div className="pl-2 mr-4 mt-20">
               <div
                 className="flex justify-start gap-3 w-full

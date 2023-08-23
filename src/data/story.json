@@ -1,34 +1,42 @@
 [
     {
         "id": 1,
-        "instagram_id": "pranavshilavane"
+        "instagram_id": "animal_lover",
+        "image": "/post/post1.png"
     },
     {
         "id": 2,
-        "instagram_id": "pranavshilavane"
+        "instagram_id": "pet_world123",
+        "image": "/post/post2.png"
     },
     {
         "id": 3,
-        "instagram_id": "pranavshilavane"
+        "instagram_id": "life_in_ocean",
+        "image": "/post/post3.png"
     },
     {
         "id": 4,
-        "instagram_id": "pranavshilavane"
+        "instagram_id": "natural_beauty",
+        "image": "/post/post4.png"
     },
     {
         "id": 5,
-        "instagram_id": "pranavshilavane"
+        "instagram_id": "world_of_butterfly",
+        "image": "/post/post5.png"
     },
     {
         "id": 6,
-        "instagram_id": "pranavshilavane"
+        "instagram_id": "night_sky",
+        "image": "/post/post6.png"
     },
     {
         "id": 7,
-        "instagram_id": "pranavshilavane"
+        "instagram_id": "nature",
+        "image": "/post/post7.png"
     },
     {
         "id": 8,
-        "instagram_id": "pranavshilavane"
+        "instagram_id": "forest",
+        "image": "/post/post8.png"
     }
 ]

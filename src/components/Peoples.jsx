@@ -1,19 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import story from "../data/story.json";
 
 export default function Peoples() {
-  const Card = () => {
+  
+  const Card = ({ instagram_id, image }) => {
     return (
       <div className="flex justify-between my-3 items-center">
         <div className="flex gap-3 items-center justify-center">
           <div className="">
             <img
-              src="/assets/profile.png"
+              src={image}
               className="rounded-full h-[3.3rem] w-[3.3rem] border-2 border-white"
             />
           </div>
           <div className="text-sm">
-            <p className="font-semibold">{"pranavshilavane"}</p>
+            <p className="font-semibold">{instagram_id}</p>
             <p className="text-stone-700">followed by star, pranav, abc</p>
           </div>
         </div>
@@ -37,7 +39,9 @@ export default function Peoples() {
 
             <div>
               <p className="text-sm font-semibold">{"pranavshilavane"}</p>
-              <p className="text-[0.9rem] text-stone-600 font-light">Pranav Shilavane</p>
+              <p className="text-[0.9rem] text-stone-600 font-light">
+                Pranav Shilavane
+              </p>
             </div>
           </div>
           <div>
@@ -48,17 +52,16 @@ export default function Peoples() {
         </div>
 
         <div className="flex justify-between my-4 mt-6">
-          <p className="text-sm text-stone-500 font-semibold">Suggested for you</p>
-          <Link className="text-xs font-semibold">
-            See All
-          </Link>
+          <p className="text-sm text-stone-500 font-semibold">
+            Suggested for you
+          </p>
+          <Link className="text-xs font-semibold">See All</Link>
         </div>
 
         <div className="">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {story.map((m) => {
+            return <Card key={m.id} {...m} />;
+          })}
         </div>
       </div>
     </div>

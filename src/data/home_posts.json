@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "account": "animal_lover",
+        "message": "Sometimes even seeing a dog's puppy can make you happy 😋",
+        "likes": "10M",
+        "image": "/post/post1.png",
+        "comments": "1k",
+        "upload": "2d"
+    },
+    {
+        "id": 2,
+        "account": "pet_world123",
+        "message": "Got surprised 🤣🤣😂😂",
+        "likes": "200K",
+        "image": "/post/post2.png",
+        "comments": "30K",
+        "upload": "2w"
+    },
+    {
+        "id": 3,
+        "account": "life_in_ocean",
+        "message": "Playing in water",
+        "likes": "10k",
+        "image": "/post/post3.png",
+        "comments": "800",
+        "upload": "1d"
+    },
+    {
+        "id": 4,
+        "account": "natural_beauty",
+        "message": "Flower and butterfly",
+        "likes": "20k",
+        "image": "/post/post4.png",
+        "comments": "1k",
+        "upload": "1m"
+    },
+    {
+        "id": 5,
+        "account": "world_of_butterfly",
+        "message": "Do you know that butterfly see the image with different visibility.",
+        "likes": "400k",
+        "image": "/post/post5.png",
+        "comments": "10k",
+        "upload": "3m"
+    },
+    {
+        "id": 6,
+        "account": "night_sky",
+        "message": "Bottle of light 🔦",
+        "likes": "20k",
+        "image": "/post/post6.png",
+        "comments": "",
+        "upload": "1m"
+    },
+    {
+        "id": 7,
+        "account": "nature",
+        "message": "Trees",
+        "likes": "10k",
+        "image": "/post/post7.png",
+        "comments": "",
+        "upload": "2m"
+    },
+    {
+        "id": 8,
+        "account": "forest",
+        "message": "Trees & water",
+        "likes": "30k",
+        "image": "/post/post8.png",
+        "comments": "900",
+        "upload": "3m"
+    }
+]

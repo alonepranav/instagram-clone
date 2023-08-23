@@ -8,9 +8,7 @@ export default function Home() {
   return (
     <div>
       <div className="flex justify-between">
-        <div>
-          <Sidebar />
-        </div>
+        <Sidebar />
         <div className="flex justify-center w-full">
           <Outlet />
         </div>

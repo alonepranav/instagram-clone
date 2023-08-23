@@ -1,7 +1,9 @@
 import React from "react";
 import Story from "./Story";
 import Peoples from "./Peoples";
-import Reels from "./Reels";
+import Reels from "./Posts";
+import posts from "../data/home_posts.json";
+import Posts from "./Posts";
 
 export default function HomeSection() {
   return (
@@ -9,11 +11,9 @@ export default function HomeSection() {
       <div className="w-full h-full ml-12">
         <Story />
         <div className="flex flex-col justify-center items-center mt-12 ml-10">
-          <Reels />
-          <Reels />
-          <Reels />
-          <Reels />
-          <Reels />
+          {[...posts].map((n) => {
+            return <Posts key={n.id} {...n} />;
+          })}
         </div>
       </div>
       <Peoples />
