@@ -18,7 +18,6 @@ export default function Peoples() {
             <p className="text-stone-700">followed by star, pranav, abc</p>
           </div>
         </div>
-
         <div>
           <p className="text-blue-600 text-sm">Follow</p>
         </div>

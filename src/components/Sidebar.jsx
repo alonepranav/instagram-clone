@@ -12,8 +12,6 @@ import { MdOutlineExplore } from "react-icons/md";
 import { FiHeart, FiSun } from "react-icons/fi";
 import { TbSquareRoundedPlus } from "react-icons/tb";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { RxCross1 } from "react-icons/rx";
-import { GrClose } from "react-icons/gr";
 import { AiOutlineClose, AiOutlineMacCommand } from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
 import { createPortal } from "react-dom";
@@ -32,7 +30,6 @@ export default function Sidebar() {
         setCreate(false);
       }
     };
-
     if (create) {
       document.body.style.overflow = "hidden";
     } else {
@@ -55,11 +52,7 @@ export default function Sidebar() {
   }, [more]);
 
   return (
-    <aside
-      className={`h-screen ${
-        small ? "w-8" : "w-60"
-      } overflow-hidden bg-yellow-400`}
-    >
+    <aside className={`h-screen ${small ? "w-8" : "w-60"} overflow-hidden`}>
       {/* For create box */}
       {create
         ? createPortal(

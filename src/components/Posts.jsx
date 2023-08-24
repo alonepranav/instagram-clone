@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { HiHeart, HiOutlineHeart } from "react-icons/hi";
+import { HiOutlineHeart } from "react-icons/hi";
 import { LuMessageCircle } from "react-icons/lu";
-import { BsBookmark } from "react-icons/bs";
 import { HiOutlineBookmark } from "react-icons/hi";
 import { AiOutlineSmile } from "react-icons/ai";
 import { Link } from "react-router-dom";

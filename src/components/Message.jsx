@@ -1,27 +1,29 @@
 import React from "react";
 import { BsChevronDown } from "react-icons/bs";
 import { FiEdit } from "react-icons/fi";
+import story from "../data/story.json";
 
 export default function Message() {
-  const Box = () => {
+  const Box = ({ instagram_id, image }) => {
     return (
       <>
         <div className="flex justify-start items-center gap-3 mb-5">
           <div>
             <img
-              src="/assets/profile.png"
-              alt=""
+              src={image}
+              alt="Profile Image"
               className="h-14 w-14 rounded-full"
             />
           </div>
           <div>
-            <p className="font-semibold">pranavshilavane</p>
+            <p className="font-semibold">{instagram_id}</p>
             <p className="text-xs pt-1 pb-2.5">Liked a message . 2d</p>
           </div>
         </div>
       </>
     );
   };
+
   return (
     <>
       <div className="w-full h-screen flex ml-10">
@@ -39,10 +41,9 @@ export default function Message() {
               <span>Request</span>
             </div>
             <div className="mt-6">
-              <Box />
-              <Box />
-              <Box />
-              <Box />
+              {story.map((q, a) => {
+                return <Box key={a} {...q} />;
+              })}
             </div>
           </div>
         </div>

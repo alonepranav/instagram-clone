@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import story from "../data/story.json";
 
 export default function Story() {
-  
   const Box = ({ instagram_id, image }) => {
     return (
       <>

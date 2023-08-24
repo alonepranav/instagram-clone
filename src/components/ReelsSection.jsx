@@ -1,16 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import { AiOutlineSmile } from "react-icons/ai";
-import { BiBookAdd, BiSend, BiSolidMusic } from "react-icons/bi";
-import { BsFileEarmarkMusic } from "react-icons/bs";
+import { BiSolidMusic } from "react-icons/bi";
 import { FiSend } from "react-icons/fi";
-import { HiHeart, HiOutlineBookmark, HiOutlineHeart } from "react-icons/hi";
+import { HiOutlineHeart } from "react-icons/hi";
 import { LuMessageCircle } from "react-icons/lu";
-import {
-  MdBookmark,
-  MdOutlineBookmark,
-  MdOutlineBookmarkBorder,
-} from "react-icons/md";
-import { TbSend } from "react-icons/tb";
+import { MdOutlineBookmarkBorder } from "react-icons/md";
 import reels from "../data/reels.json";
 
 export default function ReelsSection() {
@@ -43,12 +36,6 @@ export default function ReelsSection() {
           <br />
           <div className="pt-3 h-[700px] w-[420px] flex justify-center">
             <div className="relative rounded-md overflow-hidden shadow-stone-500 shadow-2xl">
-              {/* <img
-                src="/assets/profile.png"
-                alt=""
-                className="h-full w-full object-cover"
-              /> */}
-
               <video
                 ref={ref}
                 className="h-full w-full object-cover"
@@ -79,7 +66,7 @@ export default function ReelsSection() {
                     <img
                       src={profile}
                       className="h-10 w-10 rounded-full object-cover"
-                      alt=""
+                      alt="Profile image"
                     />
                   </div>
                   <div className="flex items-center justify-start gap-2">

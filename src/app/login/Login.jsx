@@ -1,13 +1,12 @@
 import React from "react";
 import { AiFillFacebook } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Login() {
-  
   const handleSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem("instagram", JSON.stringify("Loin instagram"));
-    location.replace("/")
+    location.replace("/");
   };
 
   return (

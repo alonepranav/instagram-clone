@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 import Sidebar from "../components/Sidebar";
-import Story from "../components/Story";
-import Peoples from "../components/Peoples";
 import { Outlet, useNavigate } from "react-router-dom";
 
 export default function Home() {
@@ -9,7 +7,6 @@ export default function Home() {
 
   useEffect(() => {
     const a = localStorage.getItem("instagram") || null;
-
     if (a === null) {
       navigate("/login");
     }

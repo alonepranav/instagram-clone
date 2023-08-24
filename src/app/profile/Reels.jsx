@@ -26,11 +26,6 @@ export default function Reels() {
             src={video}
             className="h-[24.9rem] w-full object-cover"
           ></video>
-          {/* <img
-              src="/assets/profile.png"
-              alt=""
-            /> */}
-          {/* </div> */}
         </div>
       </>
     );

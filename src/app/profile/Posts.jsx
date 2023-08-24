@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { BiMessage } from "react-icons/bi";
 import { HiHeart } from "react-icons/hi";
 import { LuMessageCircle } from "react-icons/lu";
-import { Link } from "react-router-dom";
 import Post from "./Post";
 
 export default function Posts() {

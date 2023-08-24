@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { RiSettings5Line } from "react-icons/ri";
 import { Link, Outlet, useLocation } from "react-router-dom";
-import Post from "./Post";
 
 export default function Profile() {
   const location = useLocation();
@@ -62,7 +61,6 @@ export default function Profile() {
         <div className="border-t border-slate-300 mx-12 mb-10">
           <div className="relative flex justify-center items-center gap-20">
             <div
-              // className="absolute left-[19rem] top-0 border-t border-black w-20"
               className={
                 location.pathname.endsWith("/profile") ||
                 location.pathname.endsWith("/profile/")

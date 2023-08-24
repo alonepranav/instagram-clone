@@ -1,7 +1,6 @@
 import React from "react";
 import Story from "./Story";
 import Peoples from "./Peoples";
-import Reels from "./Posts";
 import posts from "../data/home_posts.json";
 import Posts from "./Posts";
 

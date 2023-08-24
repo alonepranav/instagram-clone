@@ -1,12 +1,9 @@
 import React from "react";
-import { BiCloset, BiSmile } from "react-icons/bi";
+import { BiSmile } from "react-icons/bi";
 import { BsBookmark, BsSend } from "react-icons/bs";
-import { GrClose } from "react-icons/gr";
 import { HiHeart } from "react-icons/hi";
 import { LuMessageCircle, LuSend } from "react-icons/lu";
 import { MdClose } from "react-icons/md";
-import { RiBookMarkLine } from "react-icons/ri";
-import { useLocation } from "react-router-dom";
 
 export default function Post({ post, setPost }) {
   return (
