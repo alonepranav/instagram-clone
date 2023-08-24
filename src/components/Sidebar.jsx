@@ -40,10 +40,10 @@ export default function Sidebar() {
     }
   }, [create]);
 
-  const location = useLocation();
+  const path = useLocation();
 
   useEffect(() => {
-    if (location.pathname === "/message") setSmall(true);
+    if (path.pathname === "/message") setSmall(true);
   }, []);
 
   useEffect(() => {
@@ -104,7 +104,7 @@ export default function Sidebar() {
       <div
         className={`fixed h-full ${
           small ? "w-20" : "md:w-60"
-        }   border-r-2 border-slate-200 py-5 bg-white`}
+        }   border-r-2 border-slate-200 py-5 bg-white z-0`}
       >
         <div className="flex flex-col h-full justify-between bg-white">
           {/* For search bar */}
@@ -203,6 +203,7 @@ export default function Sidebar() {
               items-center my-3.5 hover:bg-gray-100 py-2.5 pl-5 mx-2 rounded-md"
                 onClick={() => {
                   setSmall(false);
+                  setCreate(false);
                   setSearch(false);
                 }}
               >
@@ -254,16 +255,22 @@ export default function Sidebar() {
                 </div>
                 <div className="rounded-b-2xl bg-white mt-1 py-1 text-sm">
                   <p className="mx-3 px-4 py-4 my-1 mb-2 rounded-lg hover:bg-gray-100">
-                    <Link>Switch accounts</Link>
+                    <Link to={"/signin"}>Switch accounts</Link>
                   </p>
                   <hr />
-                  <p className="mx-3 px-4 py-4 mt-2 mb-1 rounded-lg hover:bg-gray-100">
+                  <p
+                    onClick={() => {
+                      localStorage.clear();
+                      location.replace("/");
+                    }}
+                    className="mx-3 px-4 py-4 mt-2 mb-1 rounded-lg hover:bg-gray-100"
+                  >
                     Log out
                   </p>
                 </div>
               </div>
             )}{" "}
-            <div className="pl-2 mr-4 mt-20">
+            <div className="pl-2 mr-4 mt-14">
               <div
                 className="flex justify-start gap-3 w-full
               items-center my-6 mx-1 pl-2 py-2.5 rounded-md hover:bg-stone-200"

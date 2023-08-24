@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import story from "../data/story.json";
 
 export default function Peoples() {
-  
   const Card = ({ instagram_id, image }) => {
     return (
       <div className="flex justify-between my-3 items-center">
@@ -37,12 +36,12 @@ export default function Peoples() {
               className="rounded-full h-[3.4rem] w-[3.4rem] border-2 border-white"
             />
 
-            <div>
+            <Link to={"/profile"}>
               <p className="text-sm font-semibold">{"pranavshilavane"}</p>
               <p className="text-[0.9rem] text-stone-600 font-light">
                 Pranav Shilavane
               </p>
-            </div>
+            </Link>
           </div>
           <div>
             <p className="text-blue-600 text-xs font-semibold tracking-wide">

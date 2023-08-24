@@ -43,23 +43,31 @@ function App() {
           </div>
         </div>
       ) : (
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />}>
-              <Route path="/" element={<HomeSection />} />
-              <Route path="/reels" element={<ReelsSection />} />
-              <Route path="/message" element={<Message />} />
-              <Route path="profile" element={<Profile />}>
-                <Route index element={<Posts />} />
-                <Route path="reels" element={<Reels />} />
-                <Route path="tagged" element={<Tagged />} />
-              </Route>
-            </Route>
+        <div className="max-h-screen overflow-y-scroll w-screen overflow-x-hidden">
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Home />}>
+                <Route path="/" element={<HomeSection />} />
 
-            <Route path="/signin" element={<Signin />} />
-            <Route path="/login" element={<Login />} />
-          </Routes>
-        </BrowserRouter>
+                <Route path="/reels" element={<ReelsSection />} />
+
+                <Route path="/message" element={<Message />} />
+
+                <Route path="profile" element={<Profile />}>
+                  <Route index element={<Posts />} />
+
+                  <Route path="reels" element={<Reels />} />
+
+                  <Route path="tagged" element={<Tagged />} />
+                </Route>
+              </Route>
+
+              <Route path="/signin" element={<Signin />} />
+
+              <Route path="/login" element={<Login />} />
+            </Routes>
+          </BrowserRouter>
+        </div>
       )}
     </>
   );

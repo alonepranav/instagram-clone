@@ -1,8 +1,15 @@
 import React from "react";
 import { AiFillFacebook } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Login() {
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    localStorage.setItem("instagram", JSON.stringify("Loin instagram"));
+    location.replace("/")
+  };
+
   return (
     <div className="flex justify-center min-h-screen w-screen p-2">
       <div className="flex gap-20">
@@ -14,7 +21,10 @@ export default function Login() {
           />
         </div>
         <div className="mt-10">
-          <div className="border border-slate-300 w-[22rem] px-11 py-6">
+          <form
+            onSubmit={handleSubmit}
+            className="border border-slate-300 w-[22rem] px-11 py-6"
+          >
             <div className="flex justify-center">
               <img
                 src="/assets/instagram_text.png"
@@ -37,9 +47,11 @@ export default function Login() {
               />
             </div>
 
-            <button className="bg-sky-400 rounded-md py-1.5 w-full mt-2">
-              <p className="text-white font-bold text-sm">Log in</p>
-            </button>
+            <a href="/">
+              <button className="bg-sky-400 rounded-md py-1.5 w-full mt-2">
+                <p className="text-white font-bold text-sm">Log in</p>
+              </button>
+            </a>
 
             <div className="flex justify-center items-center mt-5">
               <div className="border w-full"></div>
@@ -62,12 +74,12 @@ export default function Login() {
                 Forgot password?
               </Link>
             </p>
-          </div>
+          </form>
 
           <div className="flex justify-center items-center w-[22rem] border py-5 mt-2.5">
             <p className="text-sm text-center">
               Don't have an account?
-              <Link to={"/login"} className="text-sky-500 font-semibold">
+              <Link to={"/signin"} className="text-sky-500 font-semibold">
                 {" "}
                 Sign up
               </Link>

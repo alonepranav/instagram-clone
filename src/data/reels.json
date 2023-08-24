@@ -1,0 +1,34 @@
+[
+    {
+        "account": "pranavshilavane",
+        "likes": "10k",
+        "comment": "700",
+        "profile": "/post/post1.png",
+        "video": "/reels/reel1.mp4",
+        "play": false
+    },
+    {
+        "account": "star",
+        "likes": "100k",
+        "comment": "2k",
+        "profile": "/post/post2.png",
+        "video": "/reels/reel2.mp4",
+        "play": false
+    },
+    {
+        "account": "pranav",
+        "likes": "1M",
+        "comment": "200k",
+        "profile": "/post/post3.png",
+        "video": "/reels/reel3.mp4",
+        "play": false
+    },
+    {
+        "account": "coder",
+        "likes": "100k",
+        "comment": "50k",
+        "profile": "/post/post4.png",
+        "video": "/reels/reel4.mp4",
+        "play": false
+    }
+]

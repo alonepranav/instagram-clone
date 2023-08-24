@@ -4,7 +4,7 @@ export default function Search() {
   return (
     <>
       <div
-        className="absolute z-30 top-0 left-[4.5rem] h-screen w-[395px] rounded-tr-2xl rounded-br-2xl border-l-2 bg-white"
+        className="absolute z-50 top-0 left-[4.5rem] h-screen w-[395px] rounded-tr-2xl rounded-br-2xl border-l-2 bg-white"
         style={{
           boxShadow: "13px 0 30px 1px #e3e3e3",
         }}

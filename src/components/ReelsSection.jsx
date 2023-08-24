@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { AiOutlineSmile } from "react-icons/ai";
 import { BiBookAdd, BiSend, BiSolidMusic } from "react-icons/bi";
 import { BsFileEarmarkMusic } from "react-icons/bs";
@@ -11,31 +11,79 @@ import {
   MdOutlineBookmarkBorder,
 } from "react-icons/md";
 import { TbSend } from "react-icons/tb";
+import reels from "../data/reels.json";
 
 export default function ReelsSection() {
-  const Reel = () => {
+  const [reel, setReel] = useState([]);
+
+  useEffect(() => {
+    setReel([...reels]);
+  }, []);
+
+  const ReelsBox = ({
+    account,
+    likes,
+    comment,
+    profile,
+    video,
+    play,
+    index,
+    reel,
+    setReel,
+  }) => {
+    const ref = useRef();
+
+    useEffect(() => {
+      if (play) ref.current.play();
+    }, []);
+
     return (
       <>
         <div className="snap-start snap-always h-screen">
-          <div className="my-10 h-[650px] w-[420px] flex justify-center">
+          <br />
+          <div className="pt-3 h-[700px] w-[420px] flex justify-center">
             <div className="relative rounded-md overflow-hidden shadow-stone-500 shadow-2xl">
-              <img
+              {/* <img
                 src="/assets/profile.png"
                 alt=""
                 className="h-full w-full object-cover"
-              />
+              /> */}
+
+              <video
+                ref={ref}
+                className="h-full w-full object-cover"
+                src={video}
+                loop
+                onClick={(e) => {
+                  if (e.target.paused) {
+                    setReel(() => {
+                      const o = reel.map((w, ind) => {
+                        return {
+                          ...w,
+                          play: ind === index ? true : false,
+                        };
+                      });
+
+                      return [...o];
+                    });
+                    e.target.play();
+                  } else {
+                    e.target.pause();
+                  }
+                }}
+              ></video>
 
               <div className="absolute bottom-1 mx-4 text-white">
                 <div className=" flex items-center gap-4">
                   <div>
                     <img
-                      src="/assets/profile.png"
-                      className="h-10 w-10 rounded-full"
+                      src={profile}
+                      className="h-10 w-10 rounded-full object-cover"
                       alt=""
                     />
                   </div>
                   <div className="flex items-center justify-start gap-2">
-                    <p>pranavshilavane</p>
+                    <p>{account}</p>
                     <span className="font-semibold"> . Follow</span>
                   </div>
                 </div>
@@ -58,18 +106,18 @@ export default function ReelsSection() {
             <div className="self-end pl-7 text-slate-700 text-[1.7rem] flex flex-col gap-8">
               <div>
                 <HiOutlineHeart />
-                <p className="text-xs mt-1">1.1M</p>
+                <p className="text-xs mt-1">{likes}</p>
               </div>
               <div>
                 <LuMessageCircle />
-                <p className="text-xs mt-1">123</p>
+                <p className="text-xs mt-1">{comment}</p>
               </div>
               <FiSend />
               <MdOutlineBookmarkBorder />
               <div>
                 <img
-                  src="/assets/profile.png"
-                  className="h-8 w-10 rounded-full"
+                  src={profile}
+                  className="h-7 w-10 rounded-full object-cover"
                   alt=""
                 />
               </div>
@@ -89,35 +137,23 @@ export default function ReelsSection() {
           scrollSnapType: "y mandatory",
         }}
       >
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
-        <Reel />
+        <ReelsBox {...{ video: "" }} />
+        <ReelsBox {...{ video: "" }} />
+        <ReelsBox {...{ video: "" }} />
+
+        {true ? (
+          reel.map((i, r) => {
+            return (
+              <div key={r}>
+                <ReelsBox
+                  {...{ ...i, index: r, reel: reel, setReel: setReel }}
+                />
+              </div>
+            );
+          })
+        ) : (
+          <></>
+        )}
       </div>
     </>
   );

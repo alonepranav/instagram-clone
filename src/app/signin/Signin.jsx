@@ -3,15 +3,28 @@ import { AiFillFacebook } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 export default function Signin() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    localStorage.setItem("instagram", JSON.stringify("Loin instagram"));
+    location.replace("/");
+  };
+
   return (
-    <div className="flex justify-center min-h-screen w-screen p-2">
-      <div>
-        <div className="border border-slate-300 w-[22rem] px-7 py-10">
+    <div className="flex justify-center h-full w-screen px-2 pb-10 pt-3">
+      <form onSubmit={handleSubmit}>
+        <div className="border border-slate-300 w-[22rem] px-10 pb-8 pt-7">
           <div className="flex justify-center">
-            <img src="/assets/instagram.png" alt="" className="h-[5.5rem]" />
+            <img
+              src="/assets/instagram_text.png"
+              alt=""
+              className="h-[4.6rem]"
+            />
           </div>
+
           <p className="text-center text-gray-500 font-semibold leading-6">
-            Sign up to see photos and videos from your friends.
+            Sign up to see photos and videos
+            <br />
+            from your friends.
           </p>
 
           <button className="flex justify-center items-center gap-2 bg-blue-500 rounded-md px-2 py-2 w-full mt-4">
@@ -26,25 +39,25 @@ export default function Signin() {
             <div className="border w-full"></div>
           </div>
 
-          <div className="mt-8">
+          <div className="mt-3">
             <input
               type="text"
-              className="border py-1 px-2 my-1 w-full placeholder:text-xs placeholder:text-slate-600 focus:border-slate-300 outline-none"
+              className="border py-1.5 px-2 my-1 w-full placeholder:text-xs placeholder:text-slate-600 focus:border-slate-300 outline-none bg-stone-50"
               placeholder="Mobile Number or Email"
             />
             <input
               type="text"
-              className="border py-1 px-2 my-1 w-full placeholder:text-xs placeholder:text-slate-600 focus:border-slate-300 outline-none"
+              className="border py-1.5 px-2 my-1 w-full placeholder:text-xs placeholder:text-slate-600 focus:border-slate-300 outline-none bg-stone-50"
               placeholder="Full Name"
             />
             <input
               type="text"
-              className="border py-1 px-2 my-1 w-full placeholder:text-xs placeholder:text-slate-600 focus:border-slate-300 outline-none"
+              className="border py-1.5 px-2 my-1 w-full placeholder:text-xs placeholder:text-slate-600 focus:border-slate-300 outline-none bg-stone-50"
               placeholder="Username"
             />
             <input
               type="text"
-              className="border py-1 px-2 my-1 w-full placeholder:text-xs placeholder:text-slate-600 focus:border-slate-300 outline-none"
+              className="border py-1.5 px-2 my-1 w-full placeholder:text-xs placeholder:text-slate-600 focus:border-slate-300 outline-none bg-stone-50"
               placeholder="Password"
             />
           </div>
@@ -84,7 +97,15 @@ export default function Signin() {
             </Link>
           </p>
         </div>
-      </div>
+
+        <div className="">
+          <p className="text-sm text-center mt-3 mb-2">Get the app.</p>
+          <div className="flex justify-center items-center gap-2">
+            <img src="/assets/google_play_store.png" alt="" className="h-11" />
+            <img src="/assets/microsoft_store.png" alt="" className="h-10" />
+          </div>
+        </div>
+      </form>
     </div>
   );
 }
