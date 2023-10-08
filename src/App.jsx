@@ -55,9 +55,7 @@ function App() {
 
                 <Route path="profile" element={<Profile />}>
                   <Route index element={<Posts />} />
-
                   <Route path="reels" element={<Reels />} />
-
                   <Route path="tagged" element={<Tagged />} />
                 </Route>
               </Route>
