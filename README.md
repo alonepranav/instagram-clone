@@ -6,7 +6,7 @@
 
 ### I've also added the login and sigin functionality. You dont need to add email, password or username you have to just click login or signin to get in.
 
-## Live Project : <a href="https://pranav-instagram-clone.vercel.app" target="_blank">pranav-instagram-clone.vercel.app</a>
+## Live Project : <a href="https://instagram-pranav.vercel.app" target="_blank">pranav-instagram-clone.vercel.app</a>
 
 ## Started : 7/8/23
 
